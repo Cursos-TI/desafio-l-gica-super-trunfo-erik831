@@ -1,43 +1,69 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
-
 int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
+    // Variáveis para armazenar dados da Carta1
+    char estado1 = 'A';
+    char codigo1[] = "A01";
+    char nome_da_cidade1[20] = "Ceara";
+    int populacao1 = 8794957;
+    float area1 = 148.886; // em km²
+    float pib1 = 194.885;  // em bilhões de reais
+    int numero_de_pontos_turisticos1 = 40;
 
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
+    // Variáveis para armazenar dados da Carta2
+    char estado2 = 'B';
+    char codigo2[] = "A02";
+    char nome_da_cidade2[20] = "Maranhao";
+    int populacao2 = 6775152;
+    float area2 = 31.983; // em km²
+    float pib2 = 124.981; // em bilhões de reais
+    int numero_de_pontos_turisticos2 = 10;
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    // Cálculo da densidade populacional
+    float densidade_populacional1 = populacao1 / area1;
+    float densidade_populacional2 = populacao2 / area2;
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    // Cálculo do PIB per capita
+    float pib_per_capita1 = (pib1 * 1000000000) / populacao1;
+    float pib_per_capita2 = (pib2 * 1000000000) / populacao2;
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    // Exibindo os dados da Carta1
+    printf("\n--- Carta 1 ---\n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Nome da Cidade: %s\n", nome_da_cidade1);
+    printf("População: %d habitantes\n", populacao1);
+    printf("Área: %.3f km²\n", area1);
+    printf("PIB: %.3f bilhões de reais\n", pib1);
+    printf("Número de pontos turísticos: %d\n", numero_de_pontos_turisticos1);
+    printf("Densidade populacional: %.2f habitantes por km²\n", densidade_populacional1);
+    printf("PIB per capita: R$ %.2f\n", pib_per_capita1);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    // Exibindo os dados da Carta2
+    printf("\n--- Carta 2 ---\n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Nome da Cidade: %s\n", nome_da_cidade2);
+    printf("População: %d habitantes\n", populacao2);
+    printf("Área: %.3f km²\n", area2);
+    printf("PIB: %.3f bilhões de reais\n", pib2);
+    printf("Número de pontos turísticos: %d\n", numero_de_pontos_turisticos2);
+    printf("Densidade populacional: %.2f habitantes por km²\n", densidade_populacional2);
+    printf("PIB per capita: R$ %.2f\n", pib_per_capita2);
+
+    // Comparação utilizando o PIB
+    printf("\n--- Comparação de Atributo: PIB ---\n");
+    printf("PIB da Carta 1 (Ceara): %.3f bilhões de reais\n", pib1);
+    printf("PIB da Carta 2 (Maranhao): %.3f bilhões de reais\n", pib2);
+
+    if (pib1 > pib2) {
+        printf("Resultado: Carta 1 (Ceara) Venceu!\n");
+    } else if (pib2 > pib1) {
+        printf("Resultado: Carta 2 (Maranhao) Venceu!\n");
+    } else {
+        printf("Resultado: Empate entre Carta 1 (Ceara) e Carta 2 (Maranhao)!\n");
+    }
 
     return 0;
 }
